@@ -225,7 +225,7 @@ fieldset#body {
 }
 /* Default Input */
 #loginForm input,#signupForm input[type="text"], #signupForm input[type="password"] {
-    width: 500px						;
+    width: 40%						;
 	color: #3a454d;
 	padding: 8px 8px;
 	margin: 0.3em 0;
@@ -1322,7 +1322,7 @@ justify-content: center;
 	width: 74%;
 	}
 	.header-left {
-	margin-left: 5em;
+	margin-left: 1em;
 	}
 	.top-nav ul li a {
 	padding: 2.2em 1.1em 1.6em 1.1em;
