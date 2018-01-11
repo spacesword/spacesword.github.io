@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Starting with CNNs and Deep learning competitions | SpaceSword</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="Convolution neural networks are the state of the art deep learning algorithms in computer vision that have performed exceptionally well in the recent years and are able to achieve very high accuracy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Starting with CNNs and Deep learning competitions">
+<meta property="og:url" content="http://spacesword.github.io/2017/11/09/Starting-with-CNNs/index.html">
+<meta property="og:site_name" content="SpaceSword">
+<meta property="og:description" content="Convolution neural networks are the state of the art deep learning algorithms in computer vision that have performed exceptionally well in the recent years and are able to achieve very high accuracy">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/convosyn/blogs/blob/master/blog1/DigitRecognitionCNNImageMain.png?raw=true">
+<meta property="og:updated_time" content="2018-01-11T07:27:56.965Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Starting with CNNs and Deep learning competitions">
+<meta name="twitter:description" content="Convolution neural networks are the state of the art deep learning algorithms in computer vision that have performed exceptionally well in the recent years and are able to achieve very high accuracy">
+<meta name="twitter:image" content="https://github.com/convosyn/blogs/blob/master/blog1/DigitRecognitionCNNImageMain.png?raw=true">
+    
+
+    
+        <link rel="alternate" href="/" title="SpaceSword" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">a team of young minds</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/index.html">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Open-Source/">Open Source</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Open-Source/Linux/">Linux</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Open-source/">Open source</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Open-source/Linux/">Linux</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    uncategorized
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Starting-with-CNNs" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Starting with CNNs and Deep learning competitions
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/11/09/Starting-with-CNNs/" class="article-date">
+            <time datetime="2017-11-09T06:57:00.000Z" itemprop="datePublished">2017-11-09</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://github.com/convosyn/blogs/blob/master/blog1/DigitRecognitionCNNImageMain.png?raw=true" width="360" height="270"></p>
+<p>Convolution neural networks are the state of the art deep learning algorithms in computer vision that have performed exceptionally well in the recent years and are able to achieve very high accuracy on the <strong>imagenet</strong> challenge. Not only this they have also outperformed the humans in recognizing the images accurately.</p>
+<p>In this tutorial we will use kaggle digit recognition dataset as our main dataset for training and will achieve an accuracy of greater than 95% and learn how to do it in python using well established libraries.<br>we will use <strong>keras</strong> to create our cnn model.</p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>In this tutorial we will learn the following: </p>
+<ol>
+<li>Dowloading the dataset</li>
+<li>Loading the dataset</li>
+<li>Creating the CNN model</li>
+<li>Training the model</li>
+<li>Evaluting the model</li>
+<li>Saving the predictions</li>
+</ol>
+<h2 id="Downloading-the-dataset"><a href="#Downloading-the-dataset" class="headerlink" title="Downloading the dataset"></a>Downloading the dataset</h2><p>First we will download the <a href="https://www.kaggle.com/c/digit-recognizer/data" target="_blank" rel="external">dataset</a> from the kaggle site. Save the downloaded files in folder.<br>Open the files and see what you can understand.</p>
+<h2 id="Loading-the-dataset"><a href="#Loading-the-dataset" class="headerlink" title="Loading the dataset"></a>Loading the dataset</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">Change to the directory <span class="keyword">in</span> <span class="built_in">which</span> the dataset is stored</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ./digitRec</span></span><br></pre></td></tr></table></figure>
+<p>Our CNN model will take (1, 28, 28) images as input so we load the images and reshape them to (1, 28, 28).<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#load the required modules</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib.image <span class="keyword">as</span> imgplt</span><br><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> backend <span class="keyword">as</span> K</span><br><span class="line"></span><br><span class="line"><span class="comment">#set the image dimesion ordering channels first or channels last</span></span><br><span class="line"><span class="comment">#use 'th' for channels first </span></span><br><span class="line">K.set_image_dim_ordering(<span class="string">'th'</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ld</span><span class="params">()</span>:</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">	load the train and test files and return them as 4D array</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">	file_train, file_test = <span class="string">'train.csv'</span>, <span class="string">'test.csv'</span></span><br><span class="line">	train, test = np.array(pd.read_csv(file_train), dtype=<span class="string">'float64'</span>), np.array(pd.read_csv(file_test), dtype=<span class="string">'float64'</span>)</span><br><span class="line">	sp_train = train.shape[<span class="number">0</span>]</span><br><span class="line">	sp_test = test.shape[<span class="number">0</span>]</span><br><span class="line">	Xtrain, Ytrain, Xtest = train[:, <span class="number">1</span>:], train[:, <span class="number">0</span>], test</span><br><span class="line">	Xtrain, Xtest = Xtrain.reshape(sp_train, <span class="number">1</span>, <span class="number">28</span>, <span class="number">28</span>), Xtest.reshape(sp_test, <span class="number">1</span>, <span class="number">28</span>, <span class="number">28</span>)</span><br><span class="line">	print(<span class="string">"testing data set image: "</span>)</span><br><span class="line">	img1 = Xtrain[<span class="number">0</span>].reshape(<span class="number">28</span>, <span class="number">28</span>)</span><br><span class="line">	img2 = Xtest[<span class="number">0</span>].reshape(<span class="number">28</span>, <span class="number">28</span>)</span><br><span class="line">	plt.subplot(<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">	plt.imshow(img1)</span><br><span class="line">	plt.subplot(<span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">	plt.imshow(img2)</span><br><span class="line">	plt.show()</span><br><span class="line">	<span class="keyword">return</span> Xtrain, Ytrain, Xtest</span><br></pre></td></tr></table></figure></p>
+<p>save this script in file: loadDataSet.py</p>
+<h2 id="Creating-the-model"><a href="#Creating-the-model" class="headerlink" title="Creating the model"></a>Creating the model</h2><p>Let’s start with creating a cnn model. </p>
+<p>Filters are the layers of a convolutional layer that have been found to detect edges and other general features like orientation, colors, shapes etc.</p>
+<p>our model will use 5 convolutional layers with different filter count.Usually the number of filters increase as we go deep in a network and the size of the layer decreases.</p>
+<p>Let’s start coding:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential, Model</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dense</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Dropout</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Flatten, Input, Add</span><br><span class="line"><span class="keyword">from</span> keras.layers.convolutional <span class="keyword">import</span> Conv2D</span><br><span class="line"><span class="keyword">from</span> keras.layers.convolutional <span class="keyword">import</span> MaxPooling2D</span><br><span class="line"><span class="keyword">from</span> keras.utils <span class="keyword">import</span> np_utils</span><br><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> backend <span class="keyword">as</span> K</span><br><span class="line"><span class="keyword">from</span> keras.constraints <span class="keyword">import</span> maxnorm</span><br><span class="line"><span class="keyword">from</span> keras.optimizers <span class="keyword">import</span> SGD</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">import</span> loadDataSet</span><br><span class="line"><span class="keyword">import</span> keras.layers</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">seed = <span class="number">11</span></span><br><span class="line">np.random.seed(seed)</span><br></pre></td></tr></table></figure></p>
+<p>Use a constant seed value so that the model and weights can be recreated.<br>Lets use our previous script ‘loadDataSet.py’ to load the files.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"loading dataset"</span>)</span><br><span class="line">Xtrain, Ytrain, Xtest = loadDataSet.ld()</span><br></pre></td></tr></table></figure></p>
+<p>We can do some preprocessing.</p>
+<p>Let’s center the data about the mean.<br>this will ensure that our model does not overfit.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Xtrain_mean = Xtrain.mean(axis = <span class="number">0</span>)</span><br><span class="line">Xtest_mean = Xtest.mean(axis = <span class="number">0</span>)</span><br><span class="line">print(<span class="string">"data preprocessing"</span>)</span><br><span class="line">Xtrain = Xtrain - Xtrain_mean</span><br><span class="line">Xtest = Xtest - Xtest_mean</span><br></pre></td></tr></table></figure></p>
+<p>Now, Hot encoding will convert the target variable to a matrix of 0’s and 1’s.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"hyper parmeter tuning and Hot Encoding"</span>)</span><br><span class="line">Ytrain_hot_encoded = np_utils.to_categorical(Ytrain, num_classes = <span class="number">10</span>)</span><br><span class="line">X_train, X_test, Y_train, Y_test = train_test_split(Xtrain, Ytrain_hot_encoded, train_size=<span class="number">0.95</span>)</span><br><span class="line">print(<span class="string">"Model building"</span>)</span><br><span class="line">print(<span class="string">"train data shape &#123;!s&#125;"</span>.format(Xtrain.shape))</span><br></pre></td></tr></table></figure></p>
+<p>Let’s create our cnn model. Use a function if you need a dynamic model.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createModel</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">"creating model..."</span>)</span><br><span class="line">	input_shape = <span class="keyword">None</span></span><br><span class="line">	<span class="keyword">if</span> K.image_data_format() == <span class="string">'channels_first'</span>:</span><br><span class="line">		input_shape = (<span class="number">1</span>, <span class="number">28</span>, <span class="number">28</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		input_shape = (<span class="number">28</span>, <span class="number">28</span>, <span class="number">1</span>)</span><br><span class="line">	input_img = Input(shape=input_shape)</span><br><span class="line">	conv2D_1a_3x3_1 = Conv2D(<span class="number">64</span>, (<span class="number">3</span>, <span class="number">3</span>), strides=<span class="number">1</span>, padding=<span class="string">"same"</span>, activation=<span class="string">"relu"</span>)(input_img)</span><br><span class="line">	conv2D_1b_3x3_1 = Conv2D(<span class="number">64</span>, (<span class="number">3</span>, <span class="number">3</span>), strides=<span class="number">1</span>, padding=<span class="string">"same"</span>, activation=<span class="string">"relu"</span>)(conv2D_1a_3x3_1)</span><br><span class="line">	maxpool_1_3x3_1 = MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>))(conv2D_1b_3x3_1)</span><br><span class="line">	conv2D_2a_3x3_1 = Conv2D(<span class="number">100</span>, (<span class="number">3</span>, <span class="number">3</span>), strides=<span class="number">1</span>, padding=<span class="string">"same"</span>, activation=<span class="string">"relu"</span>)(maxpool_1_3x3_1)</span><br><span class="line">	conv2D_2b_3x3_1 = Conv2D(<span class="number">100</span>, (<span class="number">3</span>, <span class="number">3</span>), strides=<span class="number">1</span>, padding=<span class="string">"same"</span>, activation=<span class="string">"relu"</span>)(conv2D_2a_3x3_1)</span><br><span class="line">	maxpool_2_3x3_1 = MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>))(conv2D_2b_3x3_1)</span><br><span class="line">	conv2D_3a_3x3_1 = Conv2D(<span class="number">128</span>, (<span class="number">3</span>, <span class="number">3</span>), strides=<span class="number">1</span>, padding=<span class="string">"same"</span>, activation=<span class="string">"relu"</span>)(maxpool_2_3x3_1)</span><br><span class="line">	conv2D_3b_3x3_1 = Conv2D(<span class="number">128</span>, (<span class="number">3</span>, <span class="number">3</span>), strides=<span class="number">1</span>, padding=<span class="string">"same"</span>, activation=<span class="string">"relu"</span>)(conv2D_3a_3x3_1)</span><br><span class="line">	maxpool_3_3x3_1 = MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>))(conv2D_3b_3x3_1)</span><br><span class="line">	final = Flatten()(maxpool_3_3x3_1)</span><br><span class="line">	final = Dense(<span class="number">512</span>, activation=<span class="string">"relu"</span>)(final)</span><br><span class="line">	final = Dropout(<span class="number">0.2</span>)(final) </span><br><span class="line">	final = Dense(<span class="number">128</span>, activation=<span class="string">'relu'</span>)(final)</span><br><span class="line">	final = Dense(<span class="number">10</span>, activation=<span class="string">"softmax"</span>)(final)</span><br><span class="line">	model = Model(inputs=input_img, outputs = final)</span><br><span class="line">	sgd = SGD(lr=<span class="number">0.1</span>, decay=<span class="number">1e-6</span>, momentum=<span class="number">0.9</span>, nesterov=<span class="keyword">True</span>)</span><br><span class="line">	model.compile(optimizer=<span class="string">'adam'</span>, loss=<span class="string">'categorical_crossentropy'</span>, metrics=[<span class="string">'accuracy'</span>, <span class="string">'categorical_accuracy'</span>])</span><br><span class="line">	print(<span class="string">"printing Model Summary...\n&#123;!s&#125;"</span>.format(model.summary()))</span><br><span class="line">	<span class="keyword">return</span> model</span><br></pre></td></tr></table></figure></p>
+<h2 id="Training-the-model"><a href="#Training-the-model" class="headerlink" title="Training the model"></a>Training the model</h2><p>Let’s train the model. </p>
+<p>Use fit method and pass the data set and other required parameters.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">model = createModel()</span><br><span class="line">epochs = <span class="number">10</span></span><br><span class="line">print(<span class="string">"Model Compilation"</span>)</span><br><span class="line">print(<span class="string">"training..."</span>)</span><br><span class="line">model.fit(X_train, Y_train, validation_data = (X_test, Y_test), epochs=epochs, batch_size=<span class="number">32</span>, shuffle=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
+<p>to save the weights use model’s <code>save</code> attribute. For keras,  weights must be saved in HDF5 format.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.save(<span class="string">'digitRecWeights.h5'</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Evaluting-the-model"><a href="#Evaluting-the-model" class="headerlink" title="Evaluting the model"></a>Evaluting the model</h2><p>this will give us three metrics defining<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scrs = model.evaluate(xtrain, ytrain)</span><br><span class="line">print(scrs)</span><br><span class="line">print(<span class="string">"Done!"</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Saving-the-predictions"><a href="#Saving-the-predictions" class="headerlink" title="Saving the predictions"></a>Saving the predictions</h2><p>From the sample submission file we see that predictions must be in a csv file with ImageId and Label columns.</p>
+<p><strong>Label</strong> will contain the predictions. Save your predictions in a csv file.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"predicting..."</span>)</span><br><span class="line">score = model.predict(Xtest, batch_size = <span class="number">32</span>)</span><br><span class="line">print(<span class="string">"Done!"</span>)</span><br><span class="line">print(<span class="string">"calculating predictions ..."</span>)</span><br><span class="line">pred = np.argmax(score, axis = <span class="number">1</span>)</span><br><span class="line">print(<span class="string">"Saving predictions..."</span>)</span><br><span class="line">pred = np.column_stack([np.arange(<span class="number">1</span>, Xtest.shape[<span class="number">0</span>]+<span class="number">1</span>).reshape(<span class="number">-1</span>, <span class="number">1</span>), pred])</span><br><span class="line">res = pd.DataFrame(pred, columns=[<span class="string">'ImageId'</span>, <span class="string">'Label'</span>], dtype=np.int64)</span><br><span class="line">res.to_csv(<span class="string">"final_pred.csv"</span>, index=<span class="keyword">None</span>)</span><br><span class="line">print(<span class="string">"Done!..."</span>)</span><br></pre></td></tr></table></figure>
+<p>Phew, that was a lot, but, we finally did it!</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>Run your script and sit back.</p>
+<p>This may take some time depending upon your hardware configuration.</p>
+<p><img src="https://raw.githubusercontent.com/convosyn/blogs/master/blog1/blog_img_1.png" width="500px" height="500px"></p>
+<p><img src="https://raw.githubusercontent.com/convosyn/blogs/master/blog1/one_out.png" width="900px" height="900px"></p>
+<p><img src="https://raw.githubusercontent.com/convosyn/blogs/master/blog1/two_out.png" width="900px" height="900px"></p>
+<h2 id="Submiting-the-Predictions"><a href="#Submiting-the-Predictions" class="headerlink" title="Submiting the Predictions"></a>Submiting the Predictions</h2><p>Now upload your prediction file on the kaggle site. We see that<br>we are able to achieve more than 95% accuracy. Though it is not as good on a trivial dataset like digit recognition but we can achieve more accuracy by tuning our model.</p>
+<p>Try different CNNs to see how they perform on our digit recognition dataset.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://spacesword.github.io/2017/11/09/Starting-with-CNNs/" data-id="cjcadhwb0000isgczq0l08qkc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/spacesword" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/11/13/Git-Tutorial/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Git Tutorial
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/11/09/MACROS-KING/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">MACROS KING </p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/10/Why-you-should-learn-to-code-even-if-you-are-a-non-Tech-Person/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://github.com/convosyn/blogs/blob/master/blog2/image_main.png?raw=true)" alt="Learn to code " class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/01/10/Why-you-should-learn-to-code-even-if-you-are-a-non-Tech-Person/" class="title">Learn to code </a></p>
+                            <p class="item-date"><time datetime="2018-01-09T21:47:00.000Z" itemprop="datePublished">2018-01-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/09/AppforLinux/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://raw.githubusercontent.com/spacesword/images/master/Untitled%20design.jpg)" alt="10 Must-Have Apps on Ubuntu Right After a Fresh Install" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Open-Source/">Open Source</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Open-Source/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2018/01/09/AppforLinux/" class="title">10 Must-Have Apps on Ubuntu Right After a Fresh Install</a></p>
+                            <p class="item-date"><time datetime="2018-01-08T23:58:00.000Z" itemprop="datePublished">2018-01-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/08/Different-Linux-Distros-according-to-you/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://i.ytimg.com/vi/HXYcmT2GbQE/maxresdefault.jpg)" alt="Different Linux Distros according to you!" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Open-source/">Open source</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Open-source/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2018/01/08/Different-Linux-Distros-according-to-you/" class="title">Different Linux Distros according to you!</a></p>
+                            <p class="item-date"><time datetime="2018-01-08T04:03:00.000Z" itemprop="datePublished">2018-01-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/08/Dynamic-Programming/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.interviewcake.com/images/svgs/fibonacci__binary_tree_recursive.svg?bust=161)" alt="Dynamic Programming" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/01/08/Dynamic-Programming/" class="title">Dynamic Programming</a></p>
+                            <p class="item-date"><time datetime="2018-01-07T23:30:00.000Z" itemprop="datePublished">2018-01-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/12/31/Why-Linux-Over-Windows/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://cu4.uicdn.net/802/83a1eac205942ee4348158d58c273/webapp/6166-linux-or-windows.png)" alt="Why Linux Over Windows?" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Open-Source/">Open Source</a></p>
+                            <p class="item-title"><a href="/2017/12/31/Why-Linux-Over-Windows/" class="title">Why Linux Over Windows?</a></p>
+                            <p class="item-date"><time datetime="2017-12-31T11:34:00.000Z" itemprop="datePublished">2017-12-31</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-Source/">Open Source</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Open-Source/Linux/">Linux</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Open-source/">Open source</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Open-source/Linux/">Linux</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Competitive/">Competitive</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Competitive-Programing/">Competitive Programing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Competitve-Programing/">Competitve Programing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT/">GIT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Terminal/">Terminal</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/Competitive/" style="font-size: 10px;">Competitive</a> <a href="/tags/Competitive-Programing/" style="font-size: 10px;">Competitive Programing</a> <a href="/tags/Competitve-Programing/" style="font-size: 10px;">Competitve Programing</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Terminal/" style="font-size: 10px;">Terminal</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://form.jotform.me/80074088497466">Feedback</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 Team SpaceSword</p>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'spacesword-tk';
+    
+    
+    var disqus_url = 'http://spacesword.github.io/2017/11/09/Starting-with-CNNs/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
